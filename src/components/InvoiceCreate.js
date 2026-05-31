@@ -32,7 +32,6 @@ const InvoiceCreate = () => {
 
   const [number, setNumber] = useState("");
 
-  // const [iprice, setIprice] = useState(0);
 
   const [search, setSearch] = useState("");
 
