@@ -64,7 +64,7 @@ const ProductDetails = () => {
             <img
               src={mainImage}
               alt={product?.title}
-              className="w-full h-[500px] object-cover"
+              className="w-full object-cover"
             />
           </div>
 

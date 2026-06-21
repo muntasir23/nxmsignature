@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 
 import {
   collection,
-  getDocs,
-  query,
-  orderBy,
-  doc,
-  updateDoc,
   deleteDoc,
+  doc,
+  getDocs,
+  orderBy,
+  query,
+  updateDoc,
 } from "firebase/firestore";
 
 import { Link } from "react-router-dom";
@@ -308,6 +308,13 @@ const InvoiceList = () => {
                         className="bg-blue-500 text-white p-2 rounded"
                       >
                         <Pencil size={16} />
+                      </Link>
+
+                      <Link
+                        to={`/invoice/${invoice.id}`}
+                        className="bg-blue-500 text-white p-2 rounded"
+                      >
+                        Click
                       </Link>
 
                       <button

@@ -1,15 +1,15 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import InvoiceCreate from "./components/InvoiceCreate";
 import Navbar from "./components/Navbar";
+import PrivateRoute from "./components/PrivateRoute";
+import { AuthProvider } from "./context/AuthContext";
 import AddProduct from "./pages/AddProduct";
 import EditInvoice from "./pages/EditInvoice";
 import EditProduct from "./pages/EditProduct";
 import Home from "./pages/Home";
 import InvoiceList from "./pages/InvoiceList";
-import ProductDetails from "./pages/ProductDetails";
-import { AuthProvider } from "./context/AuthContext";
 import Login from "./pages/Login";
-import PrivateRoute from "./components/PrivateRoute";
+import ProductDetails from "./pages/ProductDetails";
 
 function App() {
   return (
