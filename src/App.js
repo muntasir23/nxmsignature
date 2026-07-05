@@ -58,7 +58,7 @@ function App() {
                 </PrivateRoute>
               }
             />
-            <Route path="/customerview" element={<NexmodeCustomerLookup />} />
+            <Route path="/rewards" element={<NexmodeCustomerLookup />} />
             <Route
               path="/invoice"
               element={
