@@ -10,6 +10,9 @@ import Home from "./pages/Home";
 import InvoiceList from "./pages/InvoiceList";
 import Login from "./pages/Login";
 import ProductDetails from "./pages/ProductDetails";
+import NexmodeAdminEntry from "./pages/NexmodeAdminEntry";
+import NexmodeAdminDashboard from "./pages/NexmodeAdminDashboard";
+import NexmodeCustomerLookup from "./pages/NexmodeCustomerLookup";
 
 function App() {
   return (
@@ -38,6 +41,24 @@ function App() {
               }
             />
             <Route path="/product/:id" element={<ProductDetails />} />
+            <Route
+              path="/adminentry"
+              element={
+                <PrivateRoute>
+                  <NexmodeAdminEntry />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/admindashboard"
+              element={
+                <PrivateRoute>
+                  {" "}
+                  <NexmodeAdminDashboard />
+                </PrivateRoute>
+              }
+            />
+            <Route path="/customerview" element={<NexmodeCustomerLookup />} />
             <Route
               path="/invoice"
               element={
