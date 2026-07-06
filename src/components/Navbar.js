@@ -12,7 +12,7 @@ const Navbar = () => {
     { name: "Add Product", url: "/add" },
     { name: "Add Invoice", url: "/invoice" },
     { name: "Invoices", url: "invoicelist" },
-    { name: "Add Customers", url: "/adminentry" },
+    { name: "Add Customers", url: "/adminstation" },
     { name: "Loyalty Records", url: "/admindashboard" },
   ];
 
@@ -42,19 +42,43 @@ const Navbar = () => {
 
           {/* 3. Right Side: Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            {currentUser
-              ? menuItems.map((item, index) => (
-                  <Link
-                    key={index}
-                    to={item.url}
-                    className="relative text-gray-700 hover:text-black font-medium transition-colors duration-300 py-1 group"
-                  >
-                    {item.name}
-                    {/* Hover Underline Effect (Choto theke boro hobe) */}
-                    <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
-                  </Link>
-                ))
-              : ""}
+            {currentUser ? (
+              menuItems.map((item, index) => (
+                <Link
+                  key={index}
+                  to={item.url}
+                  className="relative text-gray-700 hover:text-black font-medium transition-colors duration-300 py-1 group"
+                >
+                  {item.name}
+                  {/* Hover Underline Effect (Choto theke boro hobe) */}
+                  <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
+                </Link>
+              ))
+            ) : (
+              <>
+                <Link
+                  to="shirts"
+                  className="relative text-gray-700 hover:text-black font-medium transition-colors duration-300 py-1 group"
+                >
+                  Shirts
+                  <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
+                </Link>
+                <Link
+                  to="polo"
+                  className="relative text-gray-700 hover:text-black font-medium transition-colors duration-300 py-1 group"
+                >
+                  Polo
+                  <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
+                </Link>
+                <Link
+                  to="pants"
+                  className="relative text-gray-700 hover:text-black font-medium transition-colors duration-300 py-1 group"
+                >
+                  Pants
+                  <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
+                </Link>
+              </>
+            )}
             <Link
               to="/rewards"
               onClick={() => setIsOpen(false)}
@@ -150,20 +174,44 @@ const Navbar = () => {
 
         {/* Drawer Links */}
         <div className="flex flex-col p-6 space-y-6">
-          {currentUser
-            ? menuItems.map((item, index) => (
-                <Link
-                  key={index}
-                  to={item.url}
-                  onClick={() => setIsOpen(false)} // link e click korle drawer off hobe
-                  className="relative text-lg font-medium text-gray-800 hover:text-black py-1 w-max group"
-                >
-                  {item.name}
-                  {/* Drawer Underline Effect */}
-                  <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
-                </Link>
-              ))
-            : ""}
+          {currentUser ? (
+            menuItems.map((item, index) => (
+              <Link
+                key={index}
+                to={item.url}
+                onClick={() => setIsOpen(false)} // link e click korle drawer off hobe
+                className="relative text-lg font-medium text-gray-800 hover:text-black py-1 w-max group"
+              >
+                {item.name}
+                {/* Drawer Underline Effect */}
+                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
+              </Link>
+            ))
+          ) : (
+            <>
+              <Link
+                to="shirts"
+                className="relative text-gray-700 hover:text-black font-medium transition-colors duration-300 py-1 group"
+              >
+                Shirts
+                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
+              </Link>
+              <Link
+                to="polo"
+                className="relative text-gray-700 hover:text-black font-medium transition-colors duration-300 py-1 group"
+              >
+                Polo
+                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
+              </Link>
+              <Link
+                to="pants"
+                className="relative text-gray-700 hover:text-black font-medium transition-colors duration-300 py-1 group"
+              >
+                Pants
+                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
+              </Link>
+            </>
+          )}
           <Link
             to="/rewards"
             onClick={() => setIsOpen(false)}

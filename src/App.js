@@ -13,6 +13,11 @@ import ProductDetails from "./pages/ProductDetails";
 import NexmodeAdminEntry from "./pages/NexmodeAdminEntry";
 import NexmodeAdminDashboard from "./pages/NexmodeAdminDashboard";
 import NexmodeCustomerLookup from "./pages/NexmodeCustomerLookup";
+import RewardManager from "./pages/RewardManager";
+import NexmodeAdminStation from "./pages/NexmodeAdminStation";
+import FirebaseShirtsShowcase from "./pages/FirebaseShirtsShowcase";
+import FirebasePoloShowcase from "./pages/FirebasePoloShowcase";
+import FirebasePantsShowcase from "./pages/FirebasePantsShowcase";
 
 function App() {
   return (
@@ -22,6 +27,11 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/rewards" element={<RewardManager />} />
+            <Route path="/adminstation" element={<NexmodeAdminStation />} />
+            <Route path="/shirts" element={<FirebaseShirtsShowcase />} />
+            <Route path="/polo" element={<FirebasePoloShowcase />} />
+            <Route path="/pants" element={<FirebasePantsShowcase />} />
             <Route
               path="/add"
               element={

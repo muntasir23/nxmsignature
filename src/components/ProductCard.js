@@ -5,16 +5,16 @@ const ProductCard = ({ item, handleDelete }) => {
   const { currentUser } = useAuth();
   return (
     <Link to={`/product/${item.id}`}>
-      <div className="bg-slate-200 rounded shadow ">
+      <div className="bg-gray-50 rounded shadow ">
         <div className="h-[100px] md:h-[200px] w-full overflow-hidden">
           <img src={item.images?.[0]} alt="" className="w-full rounded transform hover:scale-110 transition-transform duration-500 ease-out" />
         </div>
 
-        <h2 className="text-sm md:text-md text-gray-800 mt-3 font-bold uppercase">
+        <h2 className="text-sm md:text-md text-gray-800 mt-3 font-bold uppercase p-1">
           {item.title}
         </h2>
 
-        <div className="mt-2 flex items-end justify-between">
+        <div className="mt-2 flex items-end justify-between p-1">
           <p>
             <span className="text-gray-400 text-sm">Price</span>
             <p className="text-orange-600 font-bold text-sm">

@@ -14,6 +14,8 @@ import {
 import { db } from "../firebase/firebase.config";
 
 import ProductCard from "../components/ProductCard";
+import HeroSlider from "../components/HeroSlider";
+import PromoBanners from "../components/PromoBanners";
 
 const Products = () => {
   // 🔥 STATES
@@ -133,9 +135,13 @@ const Products = () => {
   };
 
   return (
-    <div className="p-5 md:p-10">
+    <div className="md:p-10">
+      <div>
+        <HeroSlider />
+        <PromoBanners />
+      </div>
       {/* 🔥 TOP */}
-      <div className="flex md:flex-row justify-between items-center gap-4 mb-8">
+      <div className="flex md:flex-row justify-between items-center gap-4 mb-8 mt-20">
         <div className="flex items-center justify-center gap-2">
         <span className="w-2.5 h-2.5 bg-orange-500 rounded-full animate-ping"> </span>
         <h1 className="md:text-2xl text-xl font-bold uppercase text-gray-800">
