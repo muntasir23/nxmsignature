@@ -57,6 +57,13 @@ const Navbar = () => {
             ) : (
               <>
                 <Link
+                  to="shop"
+                  className="relative text-gray-700 hover:text-black font-medium transition-colors duration-300 py-1 group"
+                >
+                  Shop
+                  <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
+                </Link>
+                <Link
                   to="shirts"
                   className="relative text-gray-700 hover:text-black font-medium transition-colors duration-300 py-1 group"
                 >
@@ -189,6 +196,13 @@ const Navbar = () => {
             ))
           ) : (
             <>
+              <Link
+                to="shop"
+                className="relative text-gray-700 hover:text-black font-medium transition-colors duration-300 py-1 group"
+              >
+                Shop
+                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
+              </Link>
               <Link
                 to="shirts"
                 className="relative text-gray-700 hover:text-black font-medium transition-colors duration-300 py-1 group"

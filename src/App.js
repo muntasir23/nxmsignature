@@ -18,6 +18,7 @@ import NexmodeAdminStation from "./pages/NexmodeAdminStation";
 import FirebaseShirtsShowcase from "./pages/FirebaseShirtsShowcase";
 import FirebasePoloShowcase from "./pages/FirebasePoloShowcase";
 import FirebasePantsShowcase from "./pages/FirebasePantsShowcase";
+import ShopPage from "./pages/ShopPage";
 
 function App() {
   return (
@@ -27,11 +28,20 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/rewards" element={<RewardManager />} />
-            <Route path="/adminstation" element={<NexmodeAdminStation />} />
+            <Route path="/rewardsnew" element={<RewardManager />} />
+            <Route
+              path="/adminstation"
+              element={
+                <PrivateRoute>
+                  {" "}
+                  <NexmodeAdminStation />
+                </PrivateRoute>
+              }
+            />
             <Route path="/shirts" element={<FirebaseShirtsShowcase />} />
             <Route path="/polo" element={<FirebasePoloShowcase />} />
             <Route path="/pants" element={<FirebasePantsShowcase />} />
+            <Route path="/shop" element={<ShopPage />} />
             <Route
               path="/add"
               element={

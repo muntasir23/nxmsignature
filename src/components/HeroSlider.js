@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from "react-router-dom";
 
 const slides = [
   {
@@ -7,7 +8,7 @@ const slides = [
     subtitle: "Premium Streetwear & Oversized Fits",
     bgImage: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&q=80&w=1920",
     ctaText: "Shop Now",
-    link: "#"
+    link: "/shop"
   },
   {
     id: 2,
@@ -15,7 +16,7 @@ const slides = [
     subtitle: "Crafted for comfort and clean line art details",
     bgImage: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=1920",
     ctaText: "Explore Collection",
-    link: "#"
+    link: "/polo"
   },
   {
     id: 3,
@@ -23,7 +24,7 @@ const slides = [
     subtitle: "Premium fabrics and modern tailoring combined",
     bgImage: "https://images.unsplash.com/photo-1479064555552-3ef4979f8908?auto=format&fit=crop&q=80&w=1920",
     ctaText: "View All",
-    link: "#"
+    link: "/shirts"
   }
 ];
 
@@ -118,12 +119,12 @@ export default function HeroSlider() {
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-black tracking-wide leading-tight mb-6">
                 {slide.title}
               </h1>
-              <a
-                href={slide.link}
+              <Link
+                to={slide.link}
                 className="bg-white text-black text-xs md:text-sm font-bold uppercase tracking-wider px-6 py-3 rounded-md hover:bg-black hover:text-white transition-all duration-300 shadow-lg"
               >
                 {slide.ctaText}
-              </a>
+              </Link>
             </div>
           </div>
         ))}

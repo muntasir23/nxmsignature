@@ -16,6 +16,11 @@ import { db } from "../firebase/firebase.config";
 import ProductCard from "../components/ProductCard";
 import HeroSlider from "../components/HeroSlider";
 import PromoBanners from "../components/PromoBanners";
+import OfferPromoCard from "../components/OfferPromoCard";
+import StoreFooter from "../components/StoreFooter";
+import { NewDropsGrid } from "../components/NewDropsGrid";
+import { TrustBar } from "../components/TrustBar";
+import { LifestyleBanners } from "../components/LifestyleBanners";
 
 const Products = () => {
   // 🔥 STATES
@@ -135,13 +140,16 @@ const Products = () => {
   };
 
   return (
-    <div className="md:p-10">
+    <div className="p-0">
       <div>
         <HeroSlider />
+       <TrustBar />
         <PromoBanners />
+        <NewDropsGrid />
+        <OfferPromoCard />
       </div>
       {/* 🔥 TOP */}
-      <div className="flex md:flex-row justify-between items-center gap-4 mb-8 mt-20">
+      <div className="flex md:flex-row justify-between items-center gap-4 mb-8 mt-20 md:p-5 p-3">
         <div className="flex items-center justify-center gap-2">
         <span className="w-2.5 h-2.5 bg-orange-500 rounded-full animate-ping"> </span>
         <h1 className="md:text-2xl text-xl font-bold uppercase text-gray-800">
@@ -183,7 +191,7 @@ const Products = () => {
       ) : (
         <>
           {/* 🔥 PRODUCTS */}
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:p-5 p-3">
             {products.map((item) => (
               <ProductCard
                 key={item.id}
@@ -211,6 +219,11 @@ const Products = () => {
           )}
         </>
       )}
+
+      <div>
+        <LifestyleBanners />
+        <StoreFooter />
+      </div>
     </div>
   );
 };
