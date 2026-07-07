@@ -13,14 +13,13 @@ import {
 
 import { db } from "../firebase/firebase.config";
 
-import ProductCard from "../components/ProductCard";
 import HeroSlider from "../components/HeroSlider";
-import PromoBanners from "../components/PromoBanners";
-import OfferPromoCard from "../components/OfferPromoCard";
-import StoreFooter from "../components/StoreFooter";
-import { NewDropsGrid } from "../components/NewDropsGrid";
-import { TrustBar } from "../components/TrustBar";
 import { LifestyleBanners } from "../components/LifestyleBanners";
+import { NewDropsGrid } from "../components/NewDropsGrid";
+import OfferPromoCard from "../components/OfferPromoCard";
+import ProductCard from "../components/ProductCard";
+import PromoBanners from "../components/PromoBanners";
+import { TrustBar } from "../components/TrustBar";
 
 const Products = () => {
   // 🔥 STATES
@@ -222,7 +221,6 @@ const Products = () => {
 
       <div>
         <LifestyleBanners />
-        <StoreFooter />
       </div>
     </div>
   );

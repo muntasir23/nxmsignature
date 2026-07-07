@@ -14,6 +14,7 @@ const Navbar = () => {
     { name: "Invoices", url: "invoicelist" },
     { name: "Add Customers", url: "/adminstation" },
     { name: "Loyalty Records", url: "/admindashboard" },
+    { name: "Admin", url: "/admin" },
   ];
 
   return (
@@ -58,6 +59,7 @@ const Navbar = () => {
               <>
                 <Link
                   to="shop"
+                  onClick={() => setIsOpen(false)}
                   className="relative text-gray-700 hover:text-black font-medium transition-colors duration-300 py-1 group"
                 >
                   Shop
@@ -65,6 +67,7 @@ const Navbar = () => {
                 </Link>
                 <Link
                   to="shirts"
+                  onClick={() => setIsOpen(false)}
                   className="relative text-gray-700 hover:text-black font-medium transition-colors duration-300 py-1 group"
                 >
                   Shirts
@@ -72,6 +75,7 @@ const Navbar = () => {
                 </Link>
                 <Link
                   to="polo"
+                  onClick={() => setIsOpen(false)}
                   className="relative text-gray-700 hover:text-black font-medium transition-colors duration-300 py-1 group"
                 >
                   Polo
@@ -79,6 +83,7 @@ const Navbar = () => {
                 </Link>
                 <Link
                   to="pants"
+                  onClick={() => setIsOpen(false)}
                   className="relative text-gray-700 hover:text-black font-medium transition-colors duration-300 py-1 group"
                 >
                   Pants
@@ -92,6 +97,14 @@ const Navbar = () => {
               className="relative text-lg font-medium text-gray-800 hover:text-black py-1 w-max group transition-colors duration-300 g"
             >
               Rewards
+              <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
+            </Link>
+            <Link
+              to="/customerprofile"
+              onClick={() => setIsOpen(false)}
+              className="relative text-lg font-medium text-gray-800 hover:text-black py-1 w-max group transition-colors duration-300 g"
+            >
+              Customer's Dashboard
               <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
             </Link>
 
@@ -198,6 +211,7 @@ const Navbar = () => {
             <>
               <Link
                 to="shop"
+                onClick={() => setIsOpen(false)}
                 className="relative text-gray-700 hover:text-black font-medium transition-colors duration-300 py-1 group"
               >
                 Shop
@@ -205,6 +219,7 @@ const Navbar = () => {
               </Link>
               <Link
                 to="shirts"
+                onClick={() => setIsOpen(false)}
                 className="relative text-gray-700 hover:text-black font-medium transition-colors duration-300 py-1 group"
               >
                 Shirts
@@ -212,6 +227,7 @@ const Navbar = () => {
               </Link>
               <Link
                 to="polo"
+                onClick={() => setIsOpen(false)}
                 className="relative text-gray-700 hover:text-black font-medium transition-colors duration-300 py-1 group"
               >
                 Polo
@@ -219,6 +235,7 @@ const Navbar = () => {
               </Link>
               <Link
                 to="pants"
+                onClick={() => setIsOpen(false)}
                 className="relative text-gray-700 hover:text-black font-medium transition-colors duration-300 py-1 group"
               >
                 Pants
@@ -232,6 +249,14 @@ const Navbar = () => {
             className="relative text-lg font-medium text-gray-800 hover:text-black py-1 w-max group"
           >
             Rewards
+          </Link>
+          <Link
+            to="/customerprofile"
+            onClick={() => setIsOpen(false)}
+            className="relative text-lg font-medium text-gray-800 hover:text-black py-1 w-max group transition-colors duration-300 g"
+          >
+            Customer's Dashboard
+            <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
           </Link>
           {!currentUser ? (
             <Link

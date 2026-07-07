@@ -6,8 +6,14 @@ const ProductCard = ({ item, handleDelete }) => {
   return (
     <Link to={`/product/${item.id}`}>
       <div className="bg-gray-50 rounded shadow ">
-        <div className="h-[100px] md:h-[200px] w-full overflow-hidden">
-          <img src={item.images?.[0]} alt="" className="w-full rounded transform hover:scale-110 transition-transform duration-500 ease-out" />
+        <div className="relative aspect-[3/4] bg-slate-50 overflow-hidden">
+          {/* <img src={item.images?.[0]} alt="" className="w-full rounded transform hover:scale-110 transition-transform duration-500 ease-out" /> */}
+          <img
+            src={item.images && item.images[0]}
+            alt={item.title}
+            className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out"
+            loading="lazy"
+          />
         </div>
 
         <h2 className="text-sm md:text-md text-gray-800 mt-3 font-bold uppercase p-1">

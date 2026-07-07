@@ -19,94 +19,111 @@ import FirebaseShirtsShowcase from "./pages/FirebaseShirtsShowcase";
 import FirebasePoloShowcase from "./pages/FirebasePoloShowcase";
 import FirebasePantsShowcase from "./pages/FirebasePantsShowcase";
 import ShopPage from "./pages/ShopPage";
+import { CartProvider } from "./context/Cartcontext";
+import CartAndCheckoutDrawer from "./components/CartAndCheckoutDrawer";
+import ShopPageNew from "./pages/ShopPageNew";
+import CustomerProfileTrack from "./pages/CustomerProfileTrack";
+import AdminDashboard from "./pages/AdminDashboard";
+import StoreFooter from './components/StoreFooter'
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <AuthProvider>
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/rewardsnew" element={<RewardManager />} />
-            <Route
-              path="/adminstation"
-              element={
-                <PrivateRoute>
-                  {" "}
-                  <NexmodeAdminStation />
-                </PrivateRoute>
-              }
-            />
-            <Route path="/shirts" element={<FirebaseShirtsShowcase />} />
-            <Route path="/polo" element={<FirebasePoloShowcase />} />
-            <Route path="/pants" element={<FirebasePantsShowcase />} />
-            <Route path="/shop" element={<ShopPage />} />
-            <Route
-              path="/add"
-              element={
-                <PrivateRoute>
-                  {" "}
-                  <AddProduct />
-                </PrivateRoute>
-              }
-            />
-            <Route
-              path="/edit/:id"
-              element={
-                <PrivateRoute>
-                  {" "}
-                  <EditProduct />
-                </PrivateRoute>
-              }
-            />
-            <Route path="/product/:id" element={<ProductDetails />} />
-            <Route
-              path="/adminentry"
-              element={
-                <PrivateRoute>
-                  <NexmodeAdminEntry />
-                </PrivateRoute>
-              }
-            />
-            <Route
-              path="/admindashboard"
-              element={
-                <PrivateRoute>
-                  {" "}
-                  <NexmodeAdminDashboard />
-                </PrivateRoute>
-              }
-            />
-            <Route path="/rewards" element={<NexmodeCustomerLookup />} />
-            <Route
-              path="/invoice"
-              element={
-                <PrivateRoute>
-                  <InvoiceCreate />
-                </PrivateRoute>
-              }
-            />
-            <Route
-              path="/invoicelist"
-              element={
-                <PrivateRoute>
-                  {" "}
-                  <InvoiceList />
-                </PrivateRoute>
-              }
-            />
-            <Route
-              path="/editinvoice/:id"
-              element={
-                <PrivateRoute>
-                  {" "}
-                  <EditInvoice />
-                </PrivateRoute>
-              }
-            />
-            <Route path="/login" element={<Login />} />
-          </Routes>
+          <CartProvider>
+            <Navbar />
+            <CartAndCheckoutDrawer />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/rewardsnew" element={<RewardManager />} />
+              <Route
+                path="/adminstation"
+                element={
+                  <PrivateRoute>
+                    {" "}
+                    <NexmodeAdminStation />
+                  </PrivateRoute>
+                }
+              />
+              <Route path="/shirts" element={<FirebaseShirtsShowcase />} />
+              <Route path="/polo" element={<FirebasePoloShowcase />} />
+              <Route path="/pants" element={<FirebasePantsShowcase />} />
+              {/* <Route path="/cart" element={<CartAndCheckoutDrawer />} /> */}
+              <Route path="/shop" element={<ShopPageNew />} />
+              <Route
+                path="/customerprofile"
+                element={<CustomerProfileTrack />}
+              />
+              <Route path="/admin" element={<AdminDashboard />} />
+              <Route path="/shopolderversion" element={<ShopPage />} />
+              <Route
+                path="/add"
+                element={
+                  <PrivateRoute>
+                    {" "}
+                    <AddProduct />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path="/edit/:id"
+                element={
+                  <PrivateRoute>
+                    {" "}
+                    <EditProduct />
+                  </PrivateRoute>
+                }
+              />
+              <Route path="/product/:id" element={<ProductDetails />} />
+              <Route
+                path="/adminentry"
+                element={
+                  <PrivateRoute>
+                    <NexmodeAdminEntry />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path="/admindashboard"
+                element={
+                  <PrivateRoute>
+                    {" "}
+                    <NexmodeAdminDashboard />
+                  </PrivateRoute>
+                }
+              />
+              <Route path="/rewards" element={<NexmodeCustomerLookup />} />
+              <Route
+                path="/invoice"
+                element={
+                  <PrivateRoute>
+                    <InvoiceCreate />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path="/invoicelist"
+                element={
+                  <PrivateRoute>
+                    {" "}
+                    <InvoiceList />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path="/editinvoice/:id"
+                element={
+                  <PrivateRoute>
+                    {" "}
+                    <EditInvoice />
+                  </PrivateRoute>
+                }
+              />
+              <Route path="/login" element={<Login />} />
+            </Routes>
+            <StoreFooter />
+          </CartProvider>
         </AuthProvider>
       </BrowserRouter>
     </div>
