@@ -168,7 +168,7 @@ const Navbar = () => {
         }`}
       >
         {/* Close Button */}
-        <div className="flex justify-between items-center p-4 border-b">
+        <div className="flex justify-between items-center p-4 border-b overflow-y-auto">
           <span className="text-xs font-semibold tracking-widest uppercase text-gray-400">
             Next is Now
           </span>
@@ -193,7 +193,7 @@ const Navbar = () => {
         </div>
 
         {/* Drawer Links */}
-        <div className="flex flex-col p-6 space-y-6">
+        <div className="flex flex-col p-6 space-y-6 overflow-y-auto">
           {currentUser ? (
             menuItems.map((item, index) => (
               <Link

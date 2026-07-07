@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { collection, getDocs, query, orderBy } from "firebase/firestore";
 import { useCart } from "../context/Cartcontext";
 import { db } from "../firebase/firebase.config";
+import { Link } from "react-router-dom";
 
 export default function ShopPage() {
   const { addToCart } = useCart();
@@ -86,7 +87,7 @@ export default function ShopPage() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-10 font-sans antialiased mt-16">
+    <div className="max-w-7xl mx-auto px-4 py-10 font-sans antialiased ">
       <div className="flex flex-col lg:flex-row gap-8">
         {/* Sidebar Frame Container */}
         <div className="w-full lg:w-64 flex-shrink-0 space-y-8 bg-slate-50/50 p-5 rounded-2xl border h-fit">
@@ -165,13 +166,15 @@ export default function ShopPage() {
                   key={product.id}
                   className="group bg-white border rounded-2xl overflow-hidden shadow-sm flex flex-col justify-between hover:shadow-md transition-all"
                 >
-                  <div className="relative aspect-[3/4] overflow-hidden bg-slate-50">
-                    <img
-                      src={product.images?.[0]}
-                      alt={product.title}
-                      className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500"
-                    />
-                  </div>
+                  <Link to={`/products/${product.id}`}>
+                    <div className="relative aspect-[3/4] overflow-hidden bg-slate-50">
+                      <img
+                        src={product.images?.[0]}
+                        alt={product.title}
+                        className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500"
+                      />
+                    </div>
+                  </Link>
 
                   <div className="p-4 border-t flex flex-col justify-between flex-grow">
                     <div>

@@ -24,7 +24,8 @@ import CartAndCheckoutDrawer from "./components/CartAndCheckoutDrawer";
 import ShopPageNew from "./pages/ShopPageNew";
 import CustomerProfileTrack from "./pages/CustomerProfileTrack";
 import AdminDashboard from "./pages/AdminDashboard";
-import StoreFooter from './components/StoreFooter'
+import StoreFooter from "./components/StoreFooter";
+import ProductDetailsPage from "./pages/ProductDetailsPage"
 
 function App() {
   return (
@@ -51,11 +52,20 @@ function App() {
               <Route path="/pants" element={<FirebasePantsShowcase />} />
               {/* <Route path="/cart" element={<CartAndCheckoutDrawer />} /> */}
               <Route path="/shop" element={<ShopPageNew />} />
+              <Route path="/products/:id" element={<ProductDetailsPage />} />
               <Route
                 path="/customerprofile"
                 element={<CustomerProfileTrack />}
               />
-              <Route path="/admin" element={<AdminDashboard />} />
+              <Route
+                path="/admin"
+                element={
+                  <PrivateRoute>
+                    {" "}
+                    <AdminDashboard />
+                  </PrivateRoute>
+                }
+              />
               <Route path="/shopolderversion" element={<ShopPage />} />
               <Route
                 path="/add"

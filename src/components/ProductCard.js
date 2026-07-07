@@ -4,7 +4,7 @@ import { useAuth } from "../context/AuthContext";
 const ProductCard = ({ item, handleDelete }) => {
   const { currentUser } = useAuth();
   return (
-    <Link to={`/product/${item.id}`}>
+    <Link to={`/products/${item.id}`}>
       <div className="bg-gray-50 rounded shadow ">
         <div className="relative aspect-[3/4] bg-slate-50 overflow-hidden">
           {/* <img src={item.images?.[0]} alt="" className="w-full rounded transform hover:scale-110 transition-transform duration-500 ease-out" /> */}
@@ -16,7 +16,7 @@ const ProductCard = ({ item, handleDelete }) => {
           />
         </div>
 
-        <h2 className="text-sm md:text-md text-gray-800 mt-3 font-bold uppercase p-1">
+        <h2 className="text-sm md:text-md text-gray-800 mt-3 font-bold uppercase p-1 tracking-wide line-clamp-1">
           {item.title}
         </h2>
 
